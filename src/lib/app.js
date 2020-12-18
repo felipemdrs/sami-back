@@ -1,7 +1,7 @@
 const restify = require('restify');
 const logger  = require('morgan');
 const bunyan  = require('bunyan');
-const log   = bunyan.createLogger({ name: 'sami-back' });
+const log     = bunyan.createLogger({ name: 'sami-back' });
 
 var server = restify.createServer({
   log: log

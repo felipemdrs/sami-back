@@ -3,13 +3,14 @@ const beneficiarioService = require('./beneficiario.service');
 
 module.exports = (app) => {
   app.get('', async (req, res, next) => {
-    var data = await beneficiarioService.obterTodos();
+    let data = await beneficiarioService.obterTodos();
     res.send(data);
+    
     next();
   });
 
   app.get('/:id', async (req, res, next) => {
-    var data = await beneficiarioService.obter(req.params.id);
+    let data = await beneficiarioService.obter(req.params.id);
 
     if (!data) {
       res.send(status.NOT_FOUND);
@@ -23,7 +24,7 @@ module.exports = (app) => {
   app.post('', async (req, res, next) => {
     try 
     {
-      var saved = await beneficiarioService.criar(req.body);
+      let saved = await beneficiarioService.criar(req.body);
       res.send(status.CREATED, { id: saved._id });
     } 
     catch(ex) {

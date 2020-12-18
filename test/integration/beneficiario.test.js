@@ -1,6 +1,3 @@
-const { IM_A_TEAPOT } = require('http-status');
-/* eslint-disable no-undef */
-
 const restify = require('restify-clients');
 const assert  = require('assert');
 
