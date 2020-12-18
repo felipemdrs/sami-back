@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "eca99dbb-a1e2-4c0d-bb9e-1771dee74256",
+		"name": "Sami-back",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Criar beneficiário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "7d046f16-b178-41cc-babd-01a15714f938",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);\r",
+							"pm.environment.set(\"id\", jsonData.id);\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"felipe\",\r\n    \"cpf\": \"00011122244\",\r\n    \"rg\": \"12345\",\r\n    \"dataNasc\": \"1910-01-01\",\r\n    \"plano\": \"BASIC\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/beneficiarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"beneficiarios"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Atualizar beneficiário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "abf49613-5ad3-4c0b-ad21-1997df822e74",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"medeiros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/beneficiarios/{{id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"beneficiarios",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deletar beneficiário",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "728ef042-659a-4586-9931-979b787aa2e9",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"medeiros\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/beneficiarios/{{id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"beneficiarios",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter beneficiário",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/beneficiarios/{{id}}",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"beneficiarios",
+						"{{id}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obter todos beneficiários",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/beneficiarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"beneficiarios"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

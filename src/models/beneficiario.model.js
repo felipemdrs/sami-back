@@ -2,13 +2,16 @@ const mongoose = require("mongoose");
 
 const BeneficiarioSchema = new mongoose.Schema(
   {
-    id: mongoose.Schema.Types.ObjectId,
     nome: {
       type: String,
       required: true
     },
     cpf: {
       type: String,
+      length: 11,
+      trim: true,
+      maxlength: 11,
+      minlength: 11,
       required: true
     },
     rg: {
@@ -28,6 +31,9 @@ const BeneficiarioSchema = new mongoose.Schema(
         type: Number,
         default: 0
     }
+  },
+  {
+    timestamps: true
   }
 );
 

@@ -14,7 +14,6 @@ if (process.env.NODE_ENV == 'production') {
 }
 
 server.pre(restify.pre.sanitizePath());
-server.use(logger('combined'));
 server.use(restify.plugins.acceptParser(server.acceptable));
 server.use(restify.plugins.queryParser());
 server.use(restify.plugins.requestLogger());
