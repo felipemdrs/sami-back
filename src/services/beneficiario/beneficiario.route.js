@@ -12,7 +12,7 @@ module.exports = (app) => {
     var data = await beneficiarioService.obter(req.params.id);
 
     if (!data) {
-      res.send(status.BAD_REQUEST);
+      res.send(status.NOT_FOUND);
     } else {
       res.send(data);
     }

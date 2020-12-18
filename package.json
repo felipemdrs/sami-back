@@ -5,7 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "NODE_ENV=develop node src/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test mocha 'test/**/*.test.js'"
   },
   "author": "",
   "license": "ISC",
@@ -15,6 +15,7 @@
     "glob": "^7.1.6",
     "http-status": "^1.5.0",
     "lodash": "^4.17.20",
+    "mocha-prepare": "^0.1.0",
     "mongoose": "^5.11.8",
     "morgan": "^1.10.0",
     "pluralize": "^8.0.0",
@@ -22,6 +23,10 @@
     "restify-router": "^0.6.2"
   },
   "devDependencies": {
-    "eslint": "^7.15.0"
+    "assert": "^2.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.15.0",
+    "mocha": "^8.2.1",
+    "restify-clients": "^3.1.0"
   }
 }
