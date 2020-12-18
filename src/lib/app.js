@@ -1,6 +1,7 @@
 const restify = require('restify');
 const logger  = require('morgan');
 const bunyan  = require('bunyan');
+const path    = require('path');
 const log     = bunyan.createLogger({ name: 'sami-back' });
 
 var server = restify.createServer({
@@ -8,7 +9,7 @@ var server = restify.createServer({
 });
 
 if (process.env.NODE_ENV == 'production') {
-  server.use(logger('common', { skip: function(req, res) { return res.statusCode < 400 }, stream: __dirname + '/../morgan.log' }));
+  server.use(logger('common', { skip: function(req, res) { return res.statusCode < 400 }, stream: path.join(__dirname, '..', 'morgan.log')}));
 } else {
   server.use(logger('dev'));
 }
