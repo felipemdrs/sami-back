@@ -7,8 +7,7 @@
     "start": "NODE_ENV=develop node src/index.js",
     "test": "NODE_ENV=test mocha 'test/**/*.test.js'"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Felipe Medeiros",
   "dependencies": {
     "bunyan": "^1.8.14",
     "dotenv": "^8.2.0",
