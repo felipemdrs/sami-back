@@ -4,6 +4,7 @@ const BeneficiarioSchema = new mongoose.Schema(
   {
     nome: {
       type: String,
+      trim: true,
       required: true
     },
     cpf: {
@@ -16,6 +17,7 @@ const BeneficiarioSchema = new mongoose.Schema(
     },
     rg: {
       type: String,
+      trim: true,
       required: true
     },
     dataNasc: {
