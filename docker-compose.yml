@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    ports:
+      - "27017:27017"
+    networks:
+      - sami-app-network
+
+  sami-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sami-back
+    env_file: .env
+    ports:
+      - 8081:8081
+    environment:
+      MONGODB_PORT: 27017
+      MONGODB_ADMINUSERNAME: root
+      MONGODB_ADMINPASSWORD: root
+    links:
+      - mongo
+    networks:
+      - sami-app-network
+    depends_on:
+      - mongo
+networks: 
+    sami-app-network:
+      driver: bridge
+    mongo-network:
+      driver: bridge

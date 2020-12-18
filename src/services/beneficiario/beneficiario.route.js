@@ -1,6 +1,9 @@
+const beneficiarioService = require('./beneficiario.service');
+
 module.exports = (app) => {
-    app.get('', (req, res, next) => {
-        res.send('Hello, World!');
-        next();
-    });
+  app.get('', async (req, res, next) => {
+    var data = await beneficiarioService.obterTodos();
+    res.send(data);
+    next();
+  });
 };
